@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Let's do addition</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script defer src="js/gen.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container-md">
+        <form class="row g-3 needs-validation" novalidate>
+            <div id="num1"></div>
+            <div id="num2">+</div>
+            <div id="num2"></div>
+            <div class="col-md-4">
+                <label for="answer" class="form-label">Answer</label>
+                <input type="number" class="form-control" id="validationCustom01" value="Mark" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <button onclick="checkAnswer()" class="button" type="button">Check Answer</button>
+        </form>
+    </div>
+    <div id="result" class=""></div>
+    <div class="valid-feedback">
+        Looks good!
+    </div>
+</body>
+
+</html>
