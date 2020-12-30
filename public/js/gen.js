@@ -15,7 +15,7 @@ let elemAnswer = document.getElementById("validateAnswer");
 function updateElements() {
     elemNum1.innerText = num1;
     elemNum2.innerText = num2;
-    elemAnswer.value = 0;
+    elemAnswer.value = "";
 }
 
 
