@@ -22,7 +22,7 @@ function addElement(val1, val2, instance) {
     newElem.className += " list-group-item";
 
     // console.log(newLi);
-    newElem.textContent = val1 + ' is a ' + val2;
+    newElem.textContent = lastsum;
     ul.append(newElem);
 }
 
