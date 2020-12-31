@@ -20,6 +20,17 @@ function updateElements() {
     elemAnswer.value = "";
 }
 
+function updateStatus(msg, state) {
+    const status = document.getElementById("status");
+    status.textContent = msg;
+    
+    if (state==="correct") {
+        status.style = "color: green;";
+    } else {
+        status.style = "color: red;";
+    }
+}
+
 
 updateElements(num1, num2);
 
@@ -27,16 +38,16 @@ function checker() {
     let answer = elemAnswer.valueAsNumber;
 
     if (checkAnswer(answer, sum)) {
-        document.getElementById("status").innerText = "Correct, try the next one ...";
-        addElement(`${num1} + ${num2} = ${sum}`,"correct");
+        addElement(`${num1} + ${num2} = ${sum}`, 'correct');
+        updateStatus('Correct, try the next one ...','correct');
         num1 = getRandInt();
         num2 = getRandInt();
         sum = getTotal(num1, num2);
         updateElements();
         // elemAnswer.innerText = 0;
     } else {
-        document.getElementById("status").innerText = "Oops, try again ...";
-        addElement(`${num1} + ${num2} = ${answer}`,"wrong");
+        updateStatus('Oops, try again ...','wrong');
+        addElement(`${num1} + ${num2} = ${answer}`, "wrong");
     }
 }
 
@@ -52,11 +63,11 @@ function getBgColour(r) {
 function addElement(msg, result) {
     let parentDiv = document.getElementById('history');
     let div = document.createElement('li');
-    div.textContent=msg;
+    div.textContent = msg;
     div.className = getBgColour(result);
     div.role = "alert";
 
-    parentDiv.appendChild(div);
+    parentDiv.prepend(div);
 }
 
 
