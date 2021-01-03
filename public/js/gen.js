@@ -72,13 +72,12 @@ function addElement(msg, result) {
 
 
 function sendAlert() {
-    let anElement = document.getElementById("alertInput");
+    const anElement = document.getElementById("alertInput");
+    const aDiv =   document.getElementById("msg");
     let elemName = anElement.value;
     if (elemName.length > 0) {
-        // alert(`Hi ${elemName}`);
-        console.log(`Hi ${elemName}`);
         console.log(elemName);
-        console.log(anElement);
+        aDiv.textContent = `Hi ${elemName}`;
     } else {
         alert("You did not enter a name!");
     }
