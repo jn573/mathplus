@@ -23,8 +23,8 @@ function updateElements() {
 function updateStatus(msg, state) {
     const status = document.getElementById("status");
     status.textContent = msg;
-    
-    if (state==="correct") {
+
+    if (state === "correct") {
         status.style = "color: green;";
     } else {
         status.style = "color: red;";
@@ -39,14 +39,14 @@ function checker() {
 
     if (checkAnswer(answer, sum)) {
         addElement(`${num1} + ${num2} = ${sum}`, 'correct');
-        updateStatus('Correct, try the next one ...','correct');
+        updateStatus('Correct, try the next one ...', 'correct');
         num1 = getRandInt();
         num2 = getRandInt();
         sum = getTotal(num1, num2);
         updateElements();
         // elemAnswer.innerText = 0;
     } else {
-        updateStatus('Oops, try again ...','wrong');
+        updateStatus('Oops, try again ...', 'wrong');
         addElement(`${num1} + ${num2} = ${answer}`, "wrong");
     }
 }
@@ -71,3 +71,15 @@ function addElement(msg, result) {
 }
 
 
+function sendAlert() {
+    let anElement = document.getElementById("alertInput");
+    let elemName = anElement.value;
+    if (elemName.length > 0) {
+        // alert(`Hi ${elemName}`);
+        console.log(`Hi ${elemName}`);
+        console.log(elemName);
+        console.log(anElement);
+    } else {
+        alert("You did not enter a name!");
+    }
+}
